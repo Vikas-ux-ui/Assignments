@@ -1,0 +1,8 @@
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\bin\Debug\Assignment2-StudentMarksAnalyzer.exe.config
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\bin\Debug\Assignment2-StudentMarksAnalyzer.exe
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\bin\Debug\Assignment2-StudentMarksAnalyzer.pdb
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\obj\Debug\Assignment2-StudentMarksAnalyzer.csproj.AssemblyReference.cache
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\obj\Debug\Assignment2-StudentMarksAnalyzer.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\obj\Debug\Assignment2-StudentMarksAnalyzer.exe
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\obj\Debug\Assignment2-StudentMarksAnalyzer.pdb
+D:\Assignments\C#\Assignment2-StudentMarksAnalyzer\Assignment2-StudentMarksAnalyzer\obj\Debug\Assignment2-StudentMarksAnalyzer.exe.config
