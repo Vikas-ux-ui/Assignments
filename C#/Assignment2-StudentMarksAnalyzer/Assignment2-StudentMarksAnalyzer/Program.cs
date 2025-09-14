@@ -1,189 +1,201 @@
 ﻿using System;
+using System.Linq;
+
 namespace Assignment2_StudentMarksAnalyzer
 {
-    // StudentData is a class which contains marks of students and Some methods In order to calculate result  
     public class StudentData
     {
-        int[] marks =new int[6];//It contains marks for each student of each subject 
-       
-        
-        public int getPracticalMarks()//It is use to get practical marks played by the students
+        int PracticalPoint, Aggregate, Total;
+        int[] marks;
+
+        public int getPracticalMarks(string name)
         {
+            Console.WriteLine("----------GUESS THE NUMBER----------\n");
+            Console.WriteLine($"Hey {name}, You Have 2 chances to guess a number between 1 and 100.");
+            Console.WriteLine("First chance correct: 100 points, Second chance correct: 50 points. Else: 0 points.\n");
+
+            int chance = 2;
+            int PracticalMarks = 0;
+            Random random = new Random();
             
-            Console.WriteLine("----------GUESS THE NUMBER----------\n\n");
-            int chance = 2;//number of chances
-            Random random = new Random();//using Random() in order to get random numbers b/w 1-100
-            int PracticalMarks = 0;//if student fails the practical then he/she will get zero
-            int WinningNumber=random.Next(1,101);
-            while (chance != 0) {//those 2 chances
-                Console.WriteLine("The number was " + WinningNumber);
-                Console.Write("Guess to Win (´◡`) :");
-               
-                var userInput=Console.ReadLine();//taking guess from user
-                
-                    int guessedNumber;
-                if (int.TryParse(userInput, out guessedNumber))//checking is the input is Ineger or not
-                {
-                    
+            int WinningNumber = random.Next(1, 101);
 
-                        if (WinningNumber == guessedNumber)//if the guessed input is correct then he got marks accordingly
-                        {
-                            PracticalMarks = chance == 2 ? 100 : 50; chance = 0;
-                        }
-                        else
-                        {
-
-                            chance--;//else chance will be reduce
-                            Console.WriteLine($"{chance} left");
-                        }
-                    
-                   
-                }
-                else
-                {
-                    Console.WriteLine("You gived wrong input Try again");//if user trying to give string as input
-                }       
-            }
-            return PracticalMarks;//return the marks
-        }
-       public void getMarks(string name, int[] maxMarks, string[] subject) {//this method() is use to initialize the marks of student and we take input from user 
-            
-            Console.WriteLine($"\n\n--------------Enter the Marks For {name}--------------");
-
-            int Total = 0;//for Aggregate of marks
-            for(int i = 0; i < subject.Length-2; i++)//this will itterate to get all subject marks
+            while (chance != 0)
             {
-                Console.Write($"\nEnter Marks of {subject[i]} :");
-                var score= Console.ReadLine();//Taking marks from user
-                int SubjectMarks;
-                if (int.TryParse(score,out SubjectMarks)){//if the inuput is  integer then the marks will initialise for that subject
-                     
+                Console.WriteLine("The number was: " + WinningNumber);
+                Console.Write("Guess to Win: ");
 
-                    maxMarks[i] = SubjectMarks > maxMarks[i] ? SubjectMarks : maxMarks[i];//as we have many students so we are checking what is the highest marks of any student
+                var userInput = Console.ReadLine();
+                int guessedNumber;
 
-
-                   
-                    if (SubjectMarks < 0 || SubjectMarks > 100)//if the marks are greater than 100 or less than 0 it will take input again from the user
+                if (int.TryParse(userInput, out guessedNumber))
+                {
+                    if (WinningNumber == guessedNumber)
                     {
-                        Console.WriteLine("-----Invalid Marks-----\nEnter again ");
-                        i--;//decreasing by 1 bkz to get that subject again
-
+                        PracticalMarks = (chance == 2) ? 100 : 50;
+                        Console.WriteLine($"Congratulations! You got {PracticalMarks} points.");
+                        break;
                     }
                     else
                     {
-                        marks[i] = SubjectMarks;//geting that input from user
-                        Total += SubjectMarks;//Aggregate for each subject
+                        chance--;
+                        Console.WriteLine($"{chance} chance(s) left.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Input try Again");//string as input
-                    i--;//decreasing by 1 bkz to get that subject again
+                    Console.WriteLine("Invalid input. Please enter a number.");
                 }
-                
             }
-            int PracticalMarks = getPracticalMarks();//to get the practical marks
-            marks[4]= PracticalMarks;//storing practical marks
-            maxMarks[4] = PracticalMarks> maxMarks[4]? PracticalMarks: maxMarks[4];//storing the highest practical marks
-            Total= Total + PracticalMarks;//Aggregate of practical and total
-            marks[5]= Total;//storing the highest Aggregate marks
-            maxMarks[5]= Total > maxMarks[5] ? Total : maxMarks[5];//storing the highest Total marks
 
+            if (PracticalMarks == 0)
+            {
+                Console.WriteLine("You failed the practical.");
+            }
+                
 
+            return PracticalMarks;
         }
 
-        public void FindMaxMarksInSubject(int SubjectId,int NumberOfStrudent,StudentData[] student, int[] maxMarks,int toggel, string[] studentName, string[] subject)
-            //This Method() is use for finding whom got maximum marks in each subject
+        public void getMarks(string name, int[] maxMarks, string[] subject, int numberOfSubject)
         {
-            string[] highestScorer=new string[5];
-            int  k = -1;
-            for (int i=0;i< NumberOfStrudent; i++)
+            marks = new int[numberOfSubject + 2]; // extra for practical and total
+            int PracticalMarks = getPracticalMarks(name);
+
+            Console.WriteLine($"\nEnter marks for {name}:");
+
+            int Sum = 0;
+
+            for (int i = 0; i < numberOfSubject; i++)
             {
-                if (maxMarks[SubjectId]== student[i].marks[SubjectId] && maxMarks[SubjectId]!=0)
+                Console.Write($"\nEnter Marks of {subject[i]}: ");
+                var score = Console.ReadLine();
+                int SubjectMarks;
+
+                if (int.TryParse(score, out SubjectMarks))
                 {
-                    k++;
-                    highestScorer[k] = studentName[i];
-                    
+                    if (SubjectMarks < 0 || SubjectMarks > 100)
+                    {
+                        Console.WriteLine("Invalid marks. Enter again.");
+                        i--;
+                        continue;
+                    }
+
+                    marks[i] = SubjectMarks;
+                    Sum += SubjectMarks;
+                    if (SubjectMarks > maxMarks[i])
+                        maxMarks[i] = SubjectMarks;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Enter a number.");
+                    i--;
                 }
             }
-            if  (k==-1) {
-                Console.WriteLine($"All Failed the {subject[SubjectId]}");
-            }
-            if (toggel == 0)
+
+            PracticalPoint = PracticalMarks;
+            marks[numberOfSubject] = PracticalMarks; // store practical
+            marks[numberOfSubject + 1] = Sum + PracticalMarks; // store total
+            Aggregate = Sum;
+            Total = Sum + PracticalMarks;
+
+            if (PracticalMarks > maxMarks[numberOfSubject])
+                maxMarks[numberOfSubject] = PracticalMarks;
+
+            if (Total > maxMarks[numberOfSubject + 1])
+                maxMarks[numberOfSubject + 1] = Total;
+        }
+
+        public void FindMaxMarksInSubject(int SubjectId, int NumberOfStudents, StudentData[] students, int[] maxMarks, int toggle, string[] studentNames, string[] subjects)
+        {
+            string[] highestScorer = new string[NumberOfStudents];
+            int k = 0;
+
+            for (int i = 0; i < NumberOfStudents; i++)
             {
-                foreach (string name in highestScorer)
+                if (students[i].marks[SubjectId] == maxMarks[SubjectId])
                 {
-                    if (name == null) break;
-                    Console.WriteLine($"In {subject[SubjectId]} , The Scorrer is {name}");
+                    highestScorer[k++] = studentNames[i];
+                }
+            }
+
+            if (toggle == 0)
+            {
+                for (int i = 0; i < k; i++)
+                {
+                    Console.WriteLine($"In {subjects[SubjectId]}, the top scorer is {highestScorer[i]} with {maxMarks[SubjectId]} marks.");
                 }
             }
             else
             {
-                if (SubjectId == 5)
+                Console.WriteLine($"\nOverall Topper(s) with {maxMarks[SubjectId]} marks:");
+                for (int i = 0; i < k; i++)
                 {
-                    foreach (string name in highestScorer)
-                    {
-                        Console.WriteLine();
-                        if (name == null) break;
-                        Console.WriteLine($" {subject[SubjectId],-7} {name,7} {maxMarks[5],9}");
-                    }
+                    Console.WriteLine($"{subjects[SubjectId],-10} {highestScorer[i],-10} {maxMarks[SubjectId],5}");
                 }
-
             }
-           
-
         }
 
         public void ShowStudentMarks()
         {
-            foreach(var mar in marks)
-                Console.Write($"{mar,10}");
+            foreach (var mark in marks)
+            {
+                Console.Write($"{mark,10}");
+            }
         }
-
     }
-    
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] maxMarks = new int[6];
-            string[] subject = { "Hindi", "English", "Science", "Computer", "Practical", "Total" };
-            string[]  studentName = { "Vikas", "Viney", "Kishan", "Jagriti", "Simran" };
-            
+            string[] subject = { "English", "Hindi", "Maths", "Science", "Practical", "Total" };
+            int numberOfSubjects = subject.Length - 2; // 4  subjects
 
-            StudentData[] student = new StudentData[studentName.Length];
-
-            for (int i = 0; i < studentName.Length; i++)
+            Console.Write("Enter the number of students: ");
+            if (!int.TryParse(Console.ReadLine(), out int numberOfStudents))
             {
-                student[i] = new StudentData();
-                
-                student[i].getMarks(studentName[i], maxMarks,subject);
-                
+                Console.WriteLine("Invalid number of students.");
+                return;
+            }
+
+            string[] studentNames = new string[numberOfStudents];
+            StudentData[] students = new StudentData[numberOfStudents];
+            int[] MaximumMarksInSubjects = new int[subject.Length];
+
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                Console.Write($"\nEnter name of student {i + 1}: ");
+                studentNames[i] = Console.ReadLine();
+            }
+
+            for (int i = 0; i < numberOfStudents; i++)
+            {
+                students[i] = new StudentData();
+                students[i].getMarks(studentNames[i], MaximumMarksInSubjects, subject, numberOfSubjects);
             }
 
             Console.Clear();
-            Console.WriteLine("\n------------------Over All Topper------------------\n");
-            Console.WriteLine($"StudentName      {subject[0],7}   {subject[1],-2}   {subject[2],7}  {subject[3],7}  {subject[4],7}  {subject[5],7}");
+            Console.WriteLine("\n------------------ Results ------------------\n");
+      
+            Console.WriteLine($"{"StudentName",-15} {subject[0],10} {subject[1],10} {subject[2],10} {subject[3],10} {subject[4],10} {subject[5],6}");
 
-            for (int i = 0; i < studentName.Length; i++)
+            for (int i = 0; i < numberOfStudents; i++)
             {
-                Console.Write($"{studentName[i],-6}");
-                student[i].ShowStudentMarks();
+                Console.Write($"{studentNames[i],-15}");
+                students[i].ShowStudentMarks();
                 Console.WriteLine();
             }
-            StudentData HighestMarks = new StudentData();
 
-            Console.WriteLine("\n------------------Over All Topper------------------\n");
+            StudentData High = new StudentData();
 
-            HighestMarks.FindMaxMarksInSubject(5, studentName.Length, student, maxMarks, 1, studentName, subject);
+            Console.WriteLine("\n------------------ Overall Topper ------------------");
+            High.FindMaxMarksInSubject(5, numberOfStudents, students, MaximumMarksInSubjects, 1, studentNames, subject);
 
-            Console.WriteLine("\n------------------Subject-wise Toppers------------------\n");
-
-            for (int i = 0; i < subject.Length; i++)
+            Console.WriteLine("\n------------------ Subject-wise Toppers ------------------");
+            for (int i = 0; i < subject.Length - 2; i++)
             {
-
-                HighestMarks.FindMaxMarksInSubject(i, studentName.Length, student, maxMarks, 0, studentName, subject);
-
+                High.FindMaxMarksInSubject(i, numberOfStudents, students, MaximumMarksInSubjects, 0, studentNames, subject);
             }
 
             Console.ReadLine();
