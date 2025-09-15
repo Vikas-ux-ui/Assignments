@@ -6,11 +6,11 @@ namespace Assignment2_StudentMarksAnalyzer
     public class StudentData
     {
         int PracticalPoint, Aggregate, Total;
-        int[] marks;
+        int[] marks= new int[4 + 2];
 
         public int getPracticalMarks(string name)
         {
-            Console.WriteLine("----------GUESS THE NUMBER----------\n");
+            Console.WriteLine("\n----------GUESS THE NUMBER----------\n");
             Console.WriteLine($"Hey {name}, You Have 2 chances to guess a number between 1 and 100.");
             Console.WriteLine("First chance correct: 100 points, Second chance correct: 50 points. Else: 0 points.\n");
 
@@ -59,7 +59,7 @@ namespace Assignment2_StudentMarksAnalyzer
 
         public void getMarks(string name, int[] maxMarks, string[] subject, int numberOfSubject)
         {
-            marks = new int[numberOfSubject + 2]; // extra for practical and total
+              // extra for practical and total
             int PracticalMarks = getPracticalMarks(name);
 
             Console.WriteLine($"\nEnter marks for {name}:");
@@ -149,8 +149,8 @@ namespace Assignment2_StudentMarksAnalyzer
     {
         static void Main(string[] args)
         {
-            string[] subject = { "English", "Hindi", "Maths", "Science", "Practical", "Total" };
-            int numberOfSubjects = subject.Length - 2; // 4  subjects
+            string[] subject = { "English", "Hindi", "Maths", "Science", "Practical" };
+            int numberOfSubjects = subject.Length - 1; // 4  subjects
 
             Console.Write("Enter the number of students: ");
             if (!int.TryParse(Console.ReadLine(), out int numberOfStudents))
@@ -161,7 +161,7 @@ namespace Assignment2_StudentMarksAnalyzer
 
             string[] studentNames = new string[numberOfStudents];
             StudentData[] students = new StudentData[numberOfStudents];
-            int[] MaximumMarksInSubjects = new int[subject.Length];
+            int[] MaximumMarksInSubjects = new int[subject.Length+1];
 
             for (int i = 0; i < numberOfStudents; i++)
             {
@@ -178,7 +178,7 @@ namespace Assignment2_StudentMarksAnalyzer
             Console.Clear();
             Console.WriteLine("\n------------------ Results ------------------\n");
 
-            Console.WriteLine($"{"StudentName",-15} {subject[0],10} {subject[1],10} {subject[2],10} {subject[3],10} {"Practical",10} {"Total",6}");
+            Console.WriteLine($"{"StudentName",-15} {subject[0],10} {subject[1],10} {subject[2],10} {subject[3],10} {subject[4],10} {"Total",6}");
 
             for (int i = 0; i < numberOfStudents; i++)
             {
