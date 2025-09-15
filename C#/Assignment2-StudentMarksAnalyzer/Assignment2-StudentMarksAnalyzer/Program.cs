@@ -17,7 +17,7 @@ namespace Assignment2_StudentMarksAnalyzer
             int chance = 2;
             int PracticalMarks = 0;
             Random random = new Random();
-            
+
             int WinningNumber = random.Next(1, 101);
 
             while (chance != 0)
@@ -33,13 +33,13 @@ namespace Assignment2_StudentMarksAnalyzer
                     if (WinningNumber == guessedNumber)
                     {
                         PracticalMarks = (chance == 2) ? 100 : 50;
-                        Console.WriteLine($"Congratulations! You got {PracticalMarks} points.");
+                        Console.WriteLine($"Congratulations You got {PracticalMarks} points.");
                         break;
                     }
                     else
                     {
                         chance--;
-                        Console.WriteLine($"{chance} chance(s) left.");
+                        Console.WriteLine($"{chance} chance left.");
                     }
                 }
                 else
@@ -52,7 +52,7 @@ namespace Assignment2_StudentMarksAnalyzer
             {
                 Console.WriteLine("You failed the practical.");
             }
-                
+
 
             return PracticalMarks;
         }
@@ -128,7 +128,7 @@ namespace Assignment2_StudentMarksAnalyzer
             }
             else
             {
-                Console.WriteLine($"\nOverall Topper(s) with {maxMarks[SubjectId]} marks:");
+                Console.WriteLine($"\nOverall Topper with {maxMarks[SubjectId]} marks:");
                 for (int i = 0; i < k; i++)
                 {
                     Console.WriteLine($"{subjects[SubjectId],-10} {highestScorer[i],-10} {maxMarks[SubjectId],5}");
@@ -177,8 +177,8 @@ namespace Assignment2_StudentMarksAnalyzer
 
             Console.Clear();
             Console.WriteLine("\n------------------ Results ------------------\n");
-      
-            Console.WriteLine($"{"StudentName",-15} {subject[0],10} {subject[1],10} {subject[2],10} {subject[3],10} {subject[4],10} {subject[5],6}");
+
+            Console.WriteLine($"{"StudentName",-15} {subject[0],10} {subject[1],10} {subject[2],10} {subject[3],10} {"Practical",10} {"Total",6}");
 
             for (int i = 0; i < numberOfStudents; i++)
             {
