@@ -6,7 +6,7 @@ namespace Assignment2_StudentMarksAnalyzer
     public class StudentData
     {
         int PracticalPoint, Aggregate, Total;
-        int[] marks= new int[4 + 2];
+        int[] marks;
 
         public int getPracticalMarks(string name)
         {
@@ -59,7 +59,7 @@ namespace Assignment2_StudentMarksAnalyzer
 
         public void getMarks(string name, int[] maxMarks, string[] subject, int numberOfSubject)
         {
-              // extra for practical and total
+            marks = new int[numberOfSubject + 2]; // extra for practical and total
             int PracticalMarks = getPracticalMarks(name);
 
             Console.WriteLine($"\nEnter marks for {name}:");
