@@ -8,8 +8,9 @@ namespace Assignment2_StudentMarksAnalyzer
         int PracticalPoint, Aggregate, Total;
         int[] marks;
 
-        public int getPracticalMarks(string name)
+        public void getPracticalMarks(string name,int numberOfSubjects)
         {
+            marks = new int[numberOfSubjects+2];
             Console.WriteLine("\n----------GUESS THE NUMBER----------\n");
             Console.WriteLine($"Hey {name}, You Have 2 chances to guess a number between 1 and 100.");
             Console.WriteLine("First chance correct: 100 points, Second chance correct: 50 points. Else: 0 points.\n");
@@ -54,13 +55,12 @@ namespace Assignment2_StudentMarksAnalyzer
             }
 
 
-            return PracticalMarks;
+            marks[numberOfSubjects] = PracticalMarks;
         }
 
         public void getMarks(string name, int[] maxMarks, string[] subject, int numberOfSubject)
         {
-            marks = new int[numberOfSubject + 2]; // extra for practical and total
-            int PracticalMarks = getPracticalMarks(name);
+            //marks = new int[numberOfSubject + 2]; // extra for practical and total
 
             Console.WriteLine($"\nEnter marks for {name}:");
 
@@ -93,14 +93,14 @@ namespace Assignment2_StudentMarksAnalyzer
                 }
             }
 
-            PracticalPoint = PracticalMarks;
-            marks[numberOfSubject] = PracticalMarks; // store practical
-            marks[numberOfSubject + 1] = Sum + PracticalMarks; // store total
+           
+       
+            marks[numberOfSubject + 1] = Sum + marks[numberOfSubject]; // store total
             Aggregate = Sum;
-            Total = Sum + PracticalMarks;
+            Total = Sum + marks[numberOfSubject];
 
-            if (PracticalMarks > maxMarks[numberOfSubject])
-                maxMarks[numberOfSubject] = PracticalMarks;
+            if (marks[numberOfSubject] > maxMarks[numberOfSubject])
+                maxMarks[numberOfSubject] = marks[numberOfSubject];
 
             if (Total > maxMarks[numberOfSubject + 1])
                 maxMarks[numberOfSubject + 1] = Total;
@@ -131,7 +131,11 @@ namespace Assignment2_StudentMarksAnalyzer
                 Console.WriteLine($"\nOverall Topper with {maxMarks[SubjectId]} marks:");
                 for (int i = 0; i < k; i++)
                 {
-                    Console.WriteLine($"{subjects[SubjectId],-10} {highestScorer[i],-10} {maxMarks[SubjectId],5}");
+                    
+                    
+                
+
+                    Console.WriteLine($" {highestScorer[i],-10} ");
                 }
             }
         }
@@ -163,6 +167,7 @@ namespace Assignment2_StudentMarksAnalyzer
             StudentData[] students = new StudentData[numberOfStudents];
             int[] MaximumMarksInSubjects = new int[subject.Length+1];
 
+
             for (int i = 0; i < numberOfStudents; i++)
             {
                 Console.Write($"\nEnter name of student {i + 1}: ");
@@ -172,6 +177,12 @@ namespace Assignment2_StudentMarksAnalyzer
             for (int i = 0; i < numberOfStudents; i++)
             {
                 students[i] = new StudentData();
+                students[i].getPracticalMarks(studentNames[i], numberOfSubjects);
+            }
+
+
+            for (int i = 0; i < numberOfStudents; i++)
+            {
                 students[i].getMarks(studentNames[i], MaximumMarksInSubjects, subject, numberOfSubjects);
             }
 

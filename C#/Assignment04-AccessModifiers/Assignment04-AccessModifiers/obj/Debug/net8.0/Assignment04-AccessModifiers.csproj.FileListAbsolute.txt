@@ -1,0 +1,15 @@
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\bin\Debug\net8.0\Assignment04-AccessModifiers.exe
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\bin\Debug\net8.0\Assignment04-AccessModifiers.deps.json
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\bin\Debug\net8.0\Assignment04-AccessModifiers.runtimeconfig.json
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\bin\Debug\net8.0\Assignment04-AccessModifiers.dll
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\bin\Debug\net8.0\Assignment04-AccessModifiers.pdb
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.AssemblyInfoInputs.cache
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.AssemblyInfo.cs
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.sourcelink.json
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.dll
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\refint\Assignment04-AccessModifiers.dll
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.pdb
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\Assignment04-AccessModifiers.genruntimeconfig.cache
+D:\Assignments\C#\Assignment04-AccessModifiers\Assignment04-AccessModifiers\obj\Debug\net8.0\ref\Assignment04-AccessModifiers.dll
