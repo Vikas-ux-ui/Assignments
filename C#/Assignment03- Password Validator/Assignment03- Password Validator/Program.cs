@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment03__Password_Validator
+namespace Assignment03_Password_Validator
 {
     internal class Program
     {

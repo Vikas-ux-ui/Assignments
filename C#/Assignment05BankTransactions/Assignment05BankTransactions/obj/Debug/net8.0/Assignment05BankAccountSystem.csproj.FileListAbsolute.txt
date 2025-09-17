@@ -1,0 +1,15 @@
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.AssemblyInfoInputs.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.AssemblyInfo.cs
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.sourcelink.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankAccountSystem.exe
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankAccountSystem.deps.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankAccountSystem.runtimeconfig.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankAccountSystem.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankAccountSystem.pdb
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\refint\Assignment05BankAccountSystem.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.pdb
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankAccountSystem.genruntimeconfig.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\ref\Assignment05BankAccountSystem.dll

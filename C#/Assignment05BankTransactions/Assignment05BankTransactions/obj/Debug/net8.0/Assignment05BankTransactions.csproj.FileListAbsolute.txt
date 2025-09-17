@@ -1,0 +1,15 @@
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankTransactions.exe
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankTransactions.deps.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankTransactions.runtimeconfig.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankTransactions.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\bin\Debug\net8.0\Assignment05BankTransactions.pdb
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.AssemblyInfoInputs.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.AssemblyInfo.cs
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.sourcelink.json
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\refint\Assignment05BankTransactions.dll
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.pdb
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\Assignment05BankTransactions.genruntimeconfig.cache
+D:\Assignments\C#\Assignment05BankTransactions\Assignment05BankTransactions\obj\Debug\net8.0\ref\Assignment05BankTransactions.dll
