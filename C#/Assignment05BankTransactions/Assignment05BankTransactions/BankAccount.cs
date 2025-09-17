@@ -8,21 +8,6 @@ namespace Assignment05BankAccountSystem
 {
     public class BankAccount
     {
-        private BankAccount Check(List<BankAccount> accounts,string accountToCheck)
-        {
-            foreach (BankAccount account in accounts)
-            {
-                if(account.AccountNumber== accountToCheck)
-                {
-                    return account;
-                }
-            }
-            return null;
-        }
-       
-
-
-
         public string Name { get; set; }
         public string AccountNumber { get; set; }
         public double Balance { get; set; }
@@ -76,7 +61,7 @@ namespace Assignment05BankAccountSystem
                 if (account.Balance >= withdrawAmount)
                 {
                     account.Balance -= withdrawAmount;
-                    Console.WriteLine($"Amount withdrawn successfully. New Balance: {account.Balance}");
+                    Console.WriteLine($"Amount withdrawn successfully from {account.AccountNumber}. New Balance is {account.Balance}");
                 }
                 else
                 {
@@ -91,7 +76,7 @@ namespace Assignment05BankAccountSystem
 
         public void Transfer(List<BankAccount> accounts)
         {
-            Console.WriteLine("Enter the account number from which transfer: ");
+            Console.WriteLine("Enter the account number from which yto transfer: ");
             string debitAccountNumber = Console.ReadLine();
             BankAccount debitAccount = Check(accounts, debitAccountNumber);
 
@@ -103,31 +88,37 @@ namespace Assignment05BankAccountSystem
             }
 
             Console.WriteLine("Enter the account number to transfer to: ");
-            string toAccountNumber = Console.ReadLine();
-            BankAccount toAccount = Check(accounts, toAccountNumber);
+            string creditAccountNumber = Console.ReadLine();
+            BankAccount creditAccount = Check(accounts, creditAccountNumber);
 
-            if (toAccount == null)
+            if (creditAccount == null)
             {
                 Console.WriteLine("Account not found.");
                 RetryFeature("transfer", accounts);
                 return;
             }
 
-            Console.WriteLine("Enter the amount to transfer: ");
-            double.TryParse(Console.ReadLine(), out double creditAccount);
 
-            if (creditAccount <= 0)
+            Console.WriteLine("Enter the amount to transfer: ");
+            double.TryParse(Console.ReadLine(), out double creditAmmount);
+            if (creditAccount.AccountNumber == debitAccount.AccountNumber)
+            {
+                Console.WriteLine("Bothh are same");
+                return;
+            }
+            if (creditAmmount <= 0)
             {
                 Console.WriteLine("Invalid amount.");
                 RetryFeature("transfer", accounts);
                 return;
             }
 
-            if (debitAccount.Balance >= creditAccount)
+            if (debitAccount.Balance >= creditAmmount)
             {
-                debitAccount.Balance -= creditAccount;
-                toAccount.Balance += creditAccount;
-                Console.WriteLine($"Successfully transferred {creditAccount} from account {debitAccount.AccountNumber} to account {toAccount.AccountNumber}");
+                debitAccount.Balance -= creditAmmount;
+                creditAccount.Balance += creditAmmount;
+                 
+                Console.WriteLine($"Successfully transferred {creditAmmount} from account {debitAccount.AccountNumber} to account {creditAccount.AccountNumber}");
                 Console.WriteLine();
             }
             else
@@ -176,6 +167,17 @@ namespace Assignment05BankAccountSystem
             {
                 RetryFeature("details", accounts);
             }
+        }
+        private BankAccount Check(List<BankAccount> accounts, string accountToCheck)
+        {
+            foreach (BankAccount account in accounts)
+            {
+                if (account.AccountNumber == accountToCheck)
+                {
+                    return account;
+                }
+            }
+            return null;
         }
     }
 }
