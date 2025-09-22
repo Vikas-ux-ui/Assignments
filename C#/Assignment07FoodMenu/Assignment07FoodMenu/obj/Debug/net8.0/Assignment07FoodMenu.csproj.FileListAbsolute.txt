@@ -1,0 +1,15 @@
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\bin\Debug\net8.0\Assignment07FoodMenu.exe
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\bin\Debug\net8.0\Assignment07FoodMenu.deps.json
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\bin\Debug\net8.0\Assignment07FoodMenu.runtimeconfig.json
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\bin\Debug\net8.0\Assignment07FoodMenu.dll
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\bin\Debug\net8.0\Assignment07FoodMenu.pdb
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.AssemblyInfoInputs.cache
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.AssemblyInfo.cs
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.sourcelink.json
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.dll
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\refint\Assignment07FoodMenu.dll
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.pdb
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\Assignment07FoodMenu.genruntimeconfig.cache
+D:\Assignments\C#\Assignment07FoodMenu\Assignment07FoodMenu\obj\Debug\net8.0\ref\Assignment07FoodMenu.dll

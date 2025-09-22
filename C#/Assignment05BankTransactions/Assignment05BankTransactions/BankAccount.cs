@@ -29,17 +29,21 @@ namespace Assignment05BankAccountSystem
                 if (!(account == null))
                 {
                     Console.WriteLine("Enter the Amount to deposit: ");
-                    double.TryParse(Console.ReadLine(), out double depositAmount);
+                    bool status=double.TryParse(Console.ReadLine(), out double depositAmount);
 
                     if (depositAmount < 0)
                     {
                         Console.WriteLine("Invalid Amount");
                     }
-                    else
+                    else if(status)
                     {
-                        account.Balance += depositAmount;
-                        Console.WriteLine($"Amount deposited successfully. New Balance: {account.Balance}");
-                    }
+                    Console.WriteLine("invalid");
+                }
+                else
+                {
+                    account.Balance += depositAmount;
+                    Console.WriteLine($"Amount deposited successfully. New Balance: {account.Balance}");
+                }
                     return;
                 }
             

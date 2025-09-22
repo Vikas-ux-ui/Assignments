@@ -1,0 +1,15 @@
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\bin\Debug\net8.0\Assignment06Inheritance.exe
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\bin\Debug\net8.0\Assignment06Inheritance.deps.json
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\bin\Debug\net8.0\Assignment06Inheritance.runtimeconfig.json
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\bin\Debug\net8.0\Assignment06Inheritance.dll
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\bin\Debug\net8.0\Assignment06Inheritance.pdb
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.AssemblyInfoInputs.cache
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.AssemblyInfo.cs
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.csproj.CoreCompileInputs.cache
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.sourcelink.json
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.dll
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\refint\Assignment06Inheritance.dll
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.pdb
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\Assignment06Inheritance.genruntimeconfig.cache
+D:\Assignments\C#\Assignment06Inheritance\Assignment06Inheritance\obj\Debug\net8.0\ref\Assignment06Inheritance.dll
