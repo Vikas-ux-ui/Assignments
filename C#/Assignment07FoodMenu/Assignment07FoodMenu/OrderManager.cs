@@ -14,7 +14,7 @@ class OrderManager : IOrderManager
         }
         else
         {
-            _orderedItems[item]=0;
+            _orderedItems[item]=1;
         }
     }
 

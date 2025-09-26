@@ -51,7 +51,7 @@ class FoodMenuApp
             string choice = Console.ReadLine();
 
             // Check if the user wants to exit
-            if (choice.ToLower() == "exit")
+            if (choice.ToLower() == "4")
             {
                 // Display the current order before exiting
                 Console.Clear();
@@ -59,11 +59,17 @@ class FoodMenuApp
                 var items = _order.GetOrderItems();
                 if (items.Count > 0)
                 {
+                    decimal total=0;
+                    Console.WriteLine($"{"OrderName",-20}{"OrderQuantity",9}{"Price",10}");
                     foreach (var item in items)
                     {
-                        Console.WriteLine($"{item.Key} : {item.Value} = {item.Key.Price* item.Value} ");
                         //Bill(items);
+                        Console.WriteLine($"{item.Key.Name,-20}{item.Value,10}{item.Key.Price* item.Value,10} ");
+                        total =total+ (item.Key.Price * item.Value);
+                       
                     }
+                    Console.WriteLine();
+                    Console.WriteLine($"{"Total",-20}{total,20}");
                 }
                 else
                 {
@@ -84,8 +90,6 @@ class FoodMenuApp
                 Console.WriteLine("Invalid choice. Enter a number between 1 and 4, or type 'exit' to quit.");
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
-
-
             }
         }
     }
@@ -100,23 +104,10 @@ class FoodMenuApp
         {
             Console.WriteLine($"{i + 1}. {_categories[i].Name}");
         }
-        Console.WriteLine("\nType 'exit' to finish and view your order.");
+        Console.WriteLine("\nType '4' to finish and view your order.");
         Console.Write("Enter your choice: ");
     }
 
-    private void Bill(Dictionary<string, int> item)
-    {
-        ////////////////////
-        //foreach (var order in _order)
-        //{
-        //    Console.WriteLine(category.Name);
-        //    if (item.ContainsKey(category.Name))
-        //    {
-        //        Console.WriteLine($"{category.Name} {item.Values} {item.Values *}");
-        //    }
-        //}
-      
-    }
 
     // Display items in a specific category
     private void ShowCategoryMenu(IMenuCategory category)
@@ -141,10 +132,8 @@ class FoodMenuApp
             if (int.TryParse(choice, out int itemNumber) && itemNumber >= 1 && itemNumber <= category.Items.Count)
             {
                 _order.AddItem(category.Items[itemNumber - 1]);
-                Console.WriteLine($"{category.Items[itemNumber - 1].Name} added to your order!");
                 Console.WriteLine("Press any key to continue");
                 Console.ReadLine();
-
             }
             else
 
