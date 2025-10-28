@@ -5,16 +5,16 @@ class OrderManager : IOrderManager
     private Dictionary<IMenuItem,int> _orderedItems = new Dictionary<IMenuItem, int>();
 
     // Add an item to the order
-    public void AddItem(IMenuItem item)
+    public void AddItem(IMenuItem item,int quantity)
     {
-        Console.WriteLine("adding item "+item.Name);
+        Console.WriteLine("adding item "+item.Name +" * "+quantity);
         if (_orderedItems.ContainsKey(item))
         {
-            _orderedItems[item]++;
+            _orderedItems[item]+=quantity;
         }
         else
         {
-            _orderedItems[item]=1;
+            _orderedItems[item]=quantity;
         }
     }
 

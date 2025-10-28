@@ -2,6 +2,6 @@
 
 interface IOrderManager
 {
-    void AddItem(IMenuItem item);
+    void AddItem(IMenuItem item,int quantity);
     Dictionary<IMenuItem,int> GetOrderItems();
 }

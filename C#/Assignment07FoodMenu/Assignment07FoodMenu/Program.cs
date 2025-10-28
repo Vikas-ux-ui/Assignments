@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 class FoodMenuApp
 {
     private List<IMenuCategory> _categories; // List of all menu categories
@@ -51,7 +51,7 @@ class FoodMenuApp
             string choice = Console.ReadLine();
 
             // Check if the user wants to exit
-            if (choice.ToLower() == "4")
+            if (choice.ToLower() == "exit")
             {
                 // Display the current order before exiting
                 Console.Clear();
@@ -59,17 +59,19 @@ class FoodMenuApp
                 var items = _order.GetOrderItems();
                 if (items.Count > 0)
                 {
-                    decimal total=0;
+                    decimal total = items.Sum(i => i.Key.Price * i.Value); ;
                     Console.WriteLine($"{"OrderName",-20}{"OrderQuantity",9}{"Price",10}");
                     foreach (var item in items)
                     {
                         //Bill(items);
-                        Console.WriteLine($"{item.Key.Name,-20}{item.Value,10}{item.Key.Price* item.Value,10} ");
-                        total =total+ (item.Key.Price * item.Value);
-                       
+                        total = total + (item.Key.Price * item.Value);
+                        Console.WriteLine($"{item.Key.Name,-20}{item.Value,10}{item.Key.Price * item.Value,10} ");
+                        
                     }
-                    Console.WriteLine();
-                    Console.WriteLine($"{"Total",-20}{total,20}");
+
+
+                    Console.WriteLine("\n\n");
+                    Console.WriteLine($"{"Total",-20}{total/2,20}");
                 }
                 else
                 {
@@ -104,7 +106,9 @@ class FoodMenuApp
         {
             Console.WriteLine($"{i + 1}. {_categories[i].Name}");
         }
-        Console.WriteLine("\nType '4' to finish and view your order.");
+
+
+        Console.WriteLine("\nType exit to finish and view your order.");
         Console.Write("Enter your choice: ");
     }
 
@@ -112,15 +116,19 @@ class FoodMenuApp
     // Display items in a specific category
     private void ShowCategoryMenu(IMenuCategory category)
     {
+        Console.Clear();
+        Console.WriteLine($"=== {category.Name} ===");
+        var displayItems = category.Items
+        .Select((item, i) => $"{i + 1}. {item.Display()}");
+
+        foreach (var display in displayItems)
+        {
+            Console.WriteLine(display);
+        }
+        Console.WriteLine($"{category.Items.Count + 1}. Back to Main Menu");
         while (true)
         {
-            Console.Clear();
-            Console.WriteLine($"=== {category.Name} ===");
-            for (int i = 0; i < category.Items.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {category.Items[i].Display()}");
-            }
-            Console.WriteLine($"{category.Items.Count + 1}. Back to Main Menu");
+           
             Console.Write("Choose an item to add : ");
 
             string choice = Console.ReadLine();
@@ -131,9 +139,17 @@ class FoodMenuApp
 
             if (int.TryParse(choice, out int itemNumber) && itemNumber >= 1 && itemNumber <= category.Items.Count)
             {
-                _order.AddItem(category.Items[itemNumber - 1]);
-                Console.WriteLine("Press any key to continue");
-                Console.ReadLine();
+                Console.Write("Enter the Quantity of item ");
+                if(int.TryParse(Console.ReadLine(),out int quantity))
+                {
+                    _order.AddItem(category.Items[itemNumber - 1], quantity);
+                }
+                else
+                {
+                    Console.WriteLine("enter valid quantity");
+                }
+                
+                
             }
             else
 

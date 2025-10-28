@@ -13,6 +13,6 @@ class MenuItem : IMenuItem
 
     public string Display()
     {
-       return $"{Name} {Price}";
+       return $"{Name,-10} {Price}";
     }
 }
